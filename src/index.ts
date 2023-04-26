@@ -7,7 +7,7 @@ export const getFilteredMovies = ({ genres }: { genres: Genre[] }): Movie[] => {
   const result = {} as Record<number, Movie[]>;
   movies.forEach((movie) => {
     const genresMathes = movie.genres.filter((genre) => genres.includes(genre)).length; // O(n)
-    if (genresMathes === 0) return;
+    if (genresMathes === 0 || genresMathes < movie.genres.length) return;
     if (!result[genresMathes]) result[genresMathes] = [movie];
     else result[genresMathes].push(movie);
   });

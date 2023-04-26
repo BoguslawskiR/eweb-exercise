@@ -218,6 +218,7 @@ describe('Generate top movies algorithm', () => {
       },
     ]
     const foundMovies = getFilteredMovies({ genres })
+    console.log
     expect(foundMovies).toEqual(expectedMoviesToBeFound)
   })
   it('should return top matched movies when passed 2 genres', () => {
